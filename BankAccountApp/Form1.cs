@@ -21,5 +21,12 @@ namespace BankAccountApp
 
 			BankAccountsGrid.DataSource = bankAccounts; // No ambiguity now
 		}
+
+		private void CreateAccountBtn_Click(object sender, EventArgs e)
+		{
+			BankAccount bb = new BankAccount();
+			bb.Reg(OwnerTxt.Text);
+			MessageBox.Show("Record Added");
+		}
 	}
 }

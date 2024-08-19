@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
+
 namespace BankAccountApp
 {
 	public partial class Form1 : Form
@@ -6,27 +11,15 @@ namespace BankAccountApp
 		{
 			InitializeComponent();
 
-			BankAccount bankAccount = new BankAccount();
-			bankAccount.Owner = "Raymond Del Rosario";
-			bankAccount.AccountNumber = Guid.NewGuid();
-			bankAccount.Balance = 250;
+			// Example usage of BankAccountsGrid without redeclaring it.
+			List<BankAccount> bankAccounts = new List<BankAccount>
+			{
+				new BankAccount { Owner = "Raymond Del Rosario", AccountNumber = Guid.NewGuid(), Balance = 250 },
+				new BankAccount { Owner = "Elon Musk", AccountNumber = Guid.NewGuid(), Balance = 9999 },
+				new BankAccount { Owner = "Bill Gates", AccountNumber = Guid.NewGuid(), Balance = 150 }
+			};
 
-			BankAccount bankAccount2 = new BankAccount();
-			bankAccount2.Owner = "Elon Musk";
-			bankAccount2.AccountNumber = Guid.NewGuid();
-			bankAccount2.Balance = 9999;
-
-			BankAccount bankAccount3 = new BankAccount();
-			bankAccount3.Owner = "Bill Gates";
-			bankAccount3.AccountNumber = Guid.NewGuid();
-			bankAccount3.Balance = 150;
-
-			List<BankAccount> bankAccounts = new List<BankAccount>();
-			bankAccounts.Add(bankAccount);
-			bankAccounts.Add(bankAccount2);
-			bankAccounts.Add(bankAccount3);
-
-			BankAccountsGrid.DataSource = bankAccounts;
+			BankAccountsGrid.DataSource = bankAccounts; // No ambiguity now
 		}
 	}
 }

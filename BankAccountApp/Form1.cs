@@ -15,8 +15,8 @@ namespace BankAccountApp
 			List<BankAccount> bankAccounts = new List<BankAccount>
 			{
 				new BankAccount { Owner = "Raymond Del Rosario", AccountNumber = Guid.NewGuid(), Balance = 250 },
-				new BankAccount { Owner = "Elon Musk", AccountNumber = Guid.NewGuid(), Balance = 9999 },
-				new BankAccount { Owner = "Bill Gates", AccountNumber = Guid.NewGuid(), Balance = 150 }
+				new BankAccount { Owner = "Donald Trump", AccountNumber = Guid.NewGuid(), Balance = 9999 },
+				new BankAccount { Owner = "Kamala Harris", AccountNumber = Guid.NewGuid(), Balance = 150 }
 			};
 
 			BankAccountsGrid.DataSource = bankAccounts; // No ambiguity now

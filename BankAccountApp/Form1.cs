@@ -25,7 +25,12 @@ namespace BankAccountApp
 		private void CreateAccountBtn_Click(object sender, EventArgs e)
 		{
 			BankAccount bb = new BankAccount();
-			bb.Reg(OwnerTxt.Text);
+
+			Guid accountNumber = Guid.NewGuid();
+			decimal initialBalance = 100;
+
+			
+			bb.Reg(OwnerTxt.Text, accountNumber, initialBalance);
 			MessageBox.Show("Record Added");
 		}
 	}
